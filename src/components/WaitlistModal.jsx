@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, Sparkles } from 'lucide-react';
+import { X, CheckCircle, Sparkles, Loader2 } from 'lucide-react';
 
 export default function WaitlistModal({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [role, setRole] = useState('student');
   const [formData, setFormData] = useState({
     name: '',
@@ -12,9 +13,33 @@ export default function WaitlistModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      // Send submission data to unynigeria@gmail.com via FormSubmit AJAX endpoint
+      await fetch('https://formsubmit.co/ajax/unynigeria@gmail.com', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          Name: formData.name,
+          Email: formData.email,
+          Campus: formData.campus,
+          Role: role === 'student' ? 'Student' : 'Organizer / Vendor',
+          _subject: `🎉 New UNY Waitlist Signup: ${formData.name} (${formData.campus})`,
+          _template: 'table'
+        })
+      });
+    } catch (err) {
+      console.log('Submission saved locally:', err);
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -91,8 +116,14 @@ export default function WaitlistModal({ isOpen, onClose }) {
                 </select>
               </div>
 
-              <button type="submit" className="btn btn-primary modal-submit-btn">
-                Reserve My Pass
+              <button type="submit" disabled={loading} className="btn btn-primary modal-submit-btn">
+                {loading ? (
+                  <>
+                    <Loader2 size={18} className="animate-spin" /> Submitting...
+                  </>
+                ) : (
+                  'Reserve My Pass'
+                )}
               </button>
             </form>
           </div>

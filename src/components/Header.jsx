@@ -19,7 +19,7 @@ export default function Header({ onOpenWaitlist }) {
         {/* Brand Logo */}
         <a href="#" className="brand-logo">
           <img 
-            src="/uny_logo_assets/uny_wordmark_purple.svg" 
+            src="/uny_logo_assets/unylogo.jpg" 
             alt="Uny Logo" 
             className="logo-img"
             onError={(e) => {
@@ -114,8 +114,10 @@ export default function Header({ onOpenWaitlist }) {
         }
 
         .logo-img {
-          height: 32px;
+          height: 38px;
           width: auto;
+          border-radius: 8px;
+          object-fit: contain;
         }
 
         .logo-text-fallback {

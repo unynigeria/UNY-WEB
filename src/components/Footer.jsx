@@ -10,7 +10,7 @@ export default function Footer({ onOpenWaitlist }) {
           <div className="footer-brand-col">
             <a href="#" className="footer-logo">
               <img 
-                src="/uny_logo_assets/uny_wordmark_white.svg" 
+                src="/uny_logo_assets/unylogo.jpg" 
                 alt="Uny Logo" 
                 className="footer-logo-img"
                 onError={(e) => {
@@ -95,8 +95,10 @@ export default function Footer({ onOpenWaitlist }) {
         }
 
         .footer-logo-img {
-          height: 30px;
+          height: 38px;
           width: auto;
+          border-radius: 8px;
+          object-fit: contain;
         }
 
         .footer-logo-text {

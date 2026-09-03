@@ -122,7 +122,7 @@ export default function HeroSection({ onOpenWaitlist }) {
 
                 <div className="app-header">
                   <div className="app-user">
-                    <img src="/uny_logo_assets/uny_favicon_purple.svg" alt="App Logo" className="app-logo-ic" />
+                    <img src="/uny_logo_assets/unylogo.jpg" alt="App Logo" className="app-logo-ic" />
                     <div>
                       <span className="app-greeting">Hey Tapi 👋</span>
                     </div>
@@ -359,6 +359,8 @@ export default function HeroSection({ onOpenWaitlist }) {
         .app-logo-ic {
           width: 28px;
           height: 28px;
+          border-radius: 6px;
+          object-fit: cover;
         }
 
         .app-greeting {
@@ -722,6 +724,20 @@ export default function HeroSection({ onOpenWaitlist }) {
         @media (max-width: 640px) {
           .hero-title {
             font-size: 2.7rem;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .hero-title {
+            font-size: 2.1rem;
+          }
+          .phone-frame {
+            width: 260px;
+            height: 520px;
+          }
+          .btn-hero {
+            padding: 12px 20px;
+            font-size: 0.88rem;
           }
         }
       `}</style>

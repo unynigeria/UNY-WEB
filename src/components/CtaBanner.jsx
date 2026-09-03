@@ -19,7 +19,7 @@ export default function CtaBanner({ onOpenWaitlist }) {
           <div className="cta-badge-center">
             <div className="white-logo-badge">
               <img 
-                src="/uny_logo_assets/uny_wordmark_purple.svg" 
+                src="/uny_logo_assets/unylogo.jpg" 
                 alt="Uny" 
                 className="badge-logo-img" 
                 onError={(e) => {
@@ -102,7 +102,9 @@ export default function CtaBanner({ onOpenWaitlist }) {
 
         .badge-logo-img {
           width: 100%;
-          height: auto;
+          height: 100%;
+          border-radius: 12px;
+          object-fit: cover;
         }
 
         .badge-logo-text {

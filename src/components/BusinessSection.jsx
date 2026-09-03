@@ -405,6 +405,96 @@ export default function BusinessSection({ onOpenWaitlist }) {
             grid-template-columns: repeat(2, 1fr);
           }
         }
+
+        @media (max-width: 640px) {
+          .business-title {
+            font-size: 2.2rem;
+          }
+
+          .dashboard-main {
+            padding: 14px;
+            gap: 14px;
+          }
+
+          .dash-content-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+          }
+
+          .stat-card {
+            padding: 8px;
+          }
+
+          .stat-value {
+            font-size: 0.95rem;
+          }
+
+          .stat-label {
+            font-size: 0.65rem;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .business-title {
+            font-size: 1.75rem;
+          }
+
+          .business-desc {
+            font-size: 0.92rem;
+          }
+
+          .dashboard-main {
+            padding: 10px;
+            gap: 10px;
+          }
+
+          .dash-heading {
+            font-size: 0.95rem;
+          }
+
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+          }
+
+          .stat-card {
+            padding: 6px 8px;
+          }
+
+          .stat-value {
+            font-size: 0.85rem;
+          }
+
+          .stat-label {
+            font-size: 0.6rem;
+          }
+
+          .stat-sub, .stat-trend {
+            font-size: 0.6rem;
+          }
+
+          .chart-header {
+            font-size: 0.7rem;
+          }
+
+          .actions-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+          }
+
+          .action-btn {
+            font-size: 0.62rem;
+            padding: 5px 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
       `}</style>
     </section>
   );
